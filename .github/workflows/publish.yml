@@ -1,10 +1,8 @@
 name: Docker Publish
-
 on:
   push:
     tags:
       - "authentik-operator-*"
-
 jobs:
   buildDockerImage:
     name: Build Docker image
@@ -12,6 +10,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+        with:
+          platforms: 'arm,arm64'
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Login to GitHub Container Registry
