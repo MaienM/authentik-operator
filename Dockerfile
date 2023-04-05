@@ -1,4 +1,4 @@
-FROM rust:1.62 as build
+FROM rust:1.63 as build
 
 # Switch workdir.
 WORKDIR /akcontroller
