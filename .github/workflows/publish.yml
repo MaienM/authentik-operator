@@ -26,7 +26,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ghcr.io/dsluijk/authentik-operator
+          images: ghcr.io/${{ github.actor }}/authentik-operator
           tags: |
             type=match, group=1, pattern=(\d*\.\d*\.\d*(.*)?)
             type=sha, prefix={{date 'X'}}-
